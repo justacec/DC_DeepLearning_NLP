@@ -21,7 +21,16 @@ def softmax(x):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    # Handle the single vector case
+    original_shape = x.shape
+    if len(x.shape) == 1:
+        x = x.reshape(1, x.shape[0])
+
+    # Compute the actual softmax function
+    xexp = np.exp(x - np.max(x, 1).reshape(x.shape[0], 1))
+    x = xexp / np.sum(xexp, 1)
+
+    x = x.reshape(original_shape)
     ### END YOUR CODE
     
     return x
