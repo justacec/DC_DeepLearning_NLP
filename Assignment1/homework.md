@@ -1,6 +1,6 @@
 
 
-# Assignment #1 Hand Problems
+# Assignment #1 Solutions
 
 Justace Clutter
 
@@ -14,6 +14,10 @@ $$
 & = \frac{e^{x_j}}{\sum\limits_i e^{x_i}}
 \end{align}
 $$
+
+## 1b
+
+Completed
 
 ## 2a
 
@@ -67,3 +71,41 @@ $$
 & = \hat{y}_k-y_k
 \end{align}
 $$
+
+## 2c
+
+This solution will leverage the previous solution and then use the chain rule to get to the final input nodes.  The additional functions $z_1$ and $z_2$ are defined as:
+$$
+\begin{align}
+\mathbf{z_1} & = \text{sigmoid}(\mathbf{x}\mathbf{W_1}+\mathbf{b_1})\\
+\mathbf{z_2} & = \mathbf{z_1}\mathbf{W_2}+\mathbf{b_2}
+\end{align}
+$$
+
+$$
+\begin{align}
+\frac{\partial \text{ CE}}{\partial x} & = \left(\mathbf{\hat{y}}-\mathbf{y}\right)\frac{\partial z_2}{\partial z_1}\frac{\partial z_1}{\partial x}\\
+& = \left(\mathbf{\hat{y}}-\mathbf{y}\right)\mathbf{W_2}\frac{\partial z1}{\partial x}\\
+& = \left(\mathbf{\hat{y}}-\mathbf{y}\right)\mathbf{W_2}\sigma' \mathbf{W_1}\\
+& = \left(\mathbf{\hat{y}}-\mathbf{y}\right)\mathbf{W_2}\left[\sigma(\mathbf{x}\mathbf{W_1}+\mathbf{b_1})\left(1-\sigma(\mathbf{x}\mathbf{W_1}+\mathbf{b_1})\right)\right]\mathbf{W_1}\\
+& = \left(\mathbf{\hat{y}}-\frac{e^{\mathbf{z_2}}}{\left|e^{\mathbf{z_2}}\right|}\right)\mathbf{W_2}\left[\sigma(\mathbf{x}\mathbf{W_1}+\mathbf{b_1})\left(1-\sigma(\mathbf{x}\mathbf{W_1}+\mathbf{b_1})\right)\right]\mathbf{W_1}\\
+\end{align}
+$$
+
+
+## 2d
+
+$$
+(D_x+1)H+(H+1)D_y
+$$
+
+## 2e
+
+Completed
+
+## 2f
+
+Completed
+
+## 2g
+
