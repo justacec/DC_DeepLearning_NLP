@@ -26,7 +26,8 @@ def forward_backward_prop(data, labels, params, dimensions):
     b2 = np.reshape(params[ofs:ofs + Dy], (1, Dy))
 
     ### YOUR CODE HERE: forward propagation
-    raise NotImplementedError
+    labels_hat = softmax(np.dot(sigmoid(np.dot(data,W1)+b1), W2) + b2)
+    cost = -np.sum(labels*np.log(labels_hat))
     ### END YOUR CODE
     
     ### YOUR CODE HERE: backward propagation
