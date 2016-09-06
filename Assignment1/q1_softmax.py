@@ -28,7 +28,7 @@ def softmax(x):
 
     # Compute the actual softmax function
     xexp = np.exp(x - np.max(x, 1).reshape(x.shape[0], 1))
-    x = xexp / np.sum(xexp, 1)
+    x = xexp / np.sum(xexp, 1).reshape(x.shape[0], 1)
 
     x = x.reshape(original_shape)
     ### END YOUR CODE
