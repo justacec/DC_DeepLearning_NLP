@@ -19,7 +19,7 @@ def sigmoid_grad(f):
     """
     
     ### YOUR CODE HERE
-    f = -f*(1.0-f)
+    f = f*(1.0-f)
     ### END YOUR CODE
     
     return f

@@ -31,6 +31,8 @@ def gradcheck_naive(f, x):
         x[ix] -= 2*h
         low = f(x)
 
+        x[ix] += h
+
         numgrad = (high[0]-low[0])/(2.0*h)
         ### END YOUR CODE
 

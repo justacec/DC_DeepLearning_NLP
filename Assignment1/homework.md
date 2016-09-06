@@ -109,3 +109,4 @@ Completed
 
 ## 2g
 
+Completed.  But I do not understand why the derivaties seem to have reverse matrix multiplication.
