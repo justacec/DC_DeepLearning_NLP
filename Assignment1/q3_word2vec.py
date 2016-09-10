@@ -10,7 +10,7 @@ def normalizeRows(x):
     # Implement a function that normalizes each row of a matrix to have unit length
     
     ### YOUR CODE HERE
-    raise NotImplementedError
+    x = x / np.asmatrix(x.sum(1)).transpose().repeat(x.shape[1], 1)
     ### END YOUR CODE
     
     return x
